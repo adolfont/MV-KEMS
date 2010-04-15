@@ -58,17 +58,41 @@ public class ValuationTests {
 		cf1 = new CompositeFormula(LnLogic.connectives.NOT, af1);
 		cf1 = new CompositeFormula(LnLogic.connectives.NOT, cf1);
 		assertEquals(v.getValue(cf1), ln.getTruthValue(2), delta);
-}
+	}
 
-//	@Test
-//	public void get_N_NegatedValueOfAtomicFormula() {
-//		v.setValue(af1, ln.getTruthValue(0));
-//		cf1 = new CompositeFormula(LnLogic.connectives.NOT, af1);
-//		cf1 = new CompositeFormula(LnLogic.connectives.NOT, cf1);
-//		assertEquals(v.getValue(cf1), ln.getTruthValue(0), delta);
-//	}
+	@Test
+	public void get_N_NegatedValueOfAtomicFormula() {
+		v.setValue(af1, ln.getTruthValue(0));
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, af1);
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, cf1);
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, cf1);
+		assertEquals(v.getValue(cf1), ln.getTruthValue(2), delta);
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, cf1);
+		assertEquals(v.getValue(cf1), ln.getTruthValue(0), delta);
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, cf1);
+		assertEquals(v.getValue(cf1), ln.getTruthValue(2), delta);
 
-	
+		v.setValue(af1, ln.getTruthValue(1));
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, af1);
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, cf1);
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, cf1);
+		assertEquals(v.getValue(cf1), ln.getTruthValue(1), delta);
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, cf1);
+		assertEquals(v.getValue(cf1), ln.getTruthValue(1), delta);
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, cf1);
+		assertEquals(v.getValue(cf1), ln.getTruthValue(1), delta);
+
+		v.setValue(af1, ln.getTruthValue(2));
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, af1);
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, cf1);
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, cf1);
+		assertEquals(v.getValue(cf1), ln.getTruthValue(0), delta);
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, cf1);
+		assertEquals(v.getValue(cf1), ln.getTruthValue(2), delta);
+		cf1 = new CompositeFormula(LnLogic.connectives.NOT, cf1);
+		assertEquals(v.getValue(cf1), ln.getTruthValue(0), delta);
+	}
+
 	@Test(expected = UnassignedValueException.class)
 	public void getErrorWhenGettingValueForUnassignedAtomicFormula() {
 		AtomicFormula af2 = new AtomicFormula(2);
