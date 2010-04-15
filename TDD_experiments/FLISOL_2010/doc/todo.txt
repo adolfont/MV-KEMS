@@ -4,10 +4,7 @@ ValuationTests:
  - test negation ****
    - of an atomic formula ****
    - of a double negation of an atomic formula ****
-   
-   
-    
-   - of a negation^n of an atomic formula
+   - of a negation^n of an atomic formula ****
  - test implication
  
  
@@ -19,4 +16,8 @@ LnLogicTests:
 
 Future:
 - Define a class/interface for connectives???
-- use KEMS parser 
+- use KEMS parser
+
+
+
+****: DONE 
