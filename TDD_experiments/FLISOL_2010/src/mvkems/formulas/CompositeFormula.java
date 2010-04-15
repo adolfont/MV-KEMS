@@ -1,6 +1,6 @@
 package mvkems.formulas;
 
-import mvkems.formulas.L3Logic.connectives;
+import mvkems.formulas.LnLogic.connectives;
 
 
 public class CompositeFormula implements Formula {
