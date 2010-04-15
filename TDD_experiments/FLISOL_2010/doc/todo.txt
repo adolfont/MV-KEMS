@@ -11,6 +11,9 @@ ValuationTests:
  - test implication
  
  
+- expected errors:
+ - get the value for an unassigned formula ****
+ 
 LnLogicTests:
 - create a Ln logic object with its truth-values 
 
