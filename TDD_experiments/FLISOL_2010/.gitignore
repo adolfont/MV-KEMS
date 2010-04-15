@@ -1,0 +1,8 @@
+*.class 
+FLISOL_2010/bin/
+*~
+.metadata/*
+.project/*
+.classpath/*
+
+
