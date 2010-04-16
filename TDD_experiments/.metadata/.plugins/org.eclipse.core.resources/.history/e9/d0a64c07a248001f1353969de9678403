@@ -1,0 +1,9 @@
+package mvkems.formulas;
+
+public class L3Logic {
+	
+	public enum connectives {NOT, IMPLIES};
+	
+	public static float VALUES[3]={0f, 1f/2, 1};  
+
+}

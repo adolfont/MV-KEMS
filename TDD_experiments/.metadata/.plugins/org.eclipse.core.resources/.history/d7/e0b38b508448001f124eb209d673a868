@@ -1,0 +1,17 @@
+package mvkems.formulas;
+
+public class AtomicFormula {
+	
+	private int value;
+
+	public void setValue(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Object getValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

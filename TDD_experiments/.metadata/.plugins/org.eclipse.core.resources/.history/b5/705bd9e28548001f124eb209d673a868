@@ -1,0 +1,23 @@
+package mvkems.formulas;
+
+import java.util.HashMap;
+
+public class Valuation {
+	
+	private Map valuationMap;
+	
+	public Valuation(){
+		valuationMap = new HashMap<int, float>
+	}
+
+	public void setValue(AtomicFormula af, int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public String getValue(AtomicFormula af) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

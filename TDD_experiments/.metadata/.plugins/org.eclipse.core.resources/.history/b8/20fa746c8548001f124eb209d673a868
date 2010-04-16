@@ -1,0 +1,33 @@
+= Version 2 =
+
+= Version 1 =
+
+public class ValuationTests {
+	
+	private float delta = 0.00001f; 
+	
+	@Test public void assignValuesForFormulas() {
+		
+		AtomicFormula af = new AtomicFormula();
+		af.setValue(0);
+		
+		assertEquals(af.getValue(),0f, delta);
+
+	}
+
+}
+
+public class AtomicFormula {
+	
+	private float value;
+
+	public void setValue(float i) {
+		value=i;
+		
+	}
+
+	public float getValue() {
+		return value;
+	}
+
+}

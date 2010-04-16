@@ -1,0 +1,20 @@
+package mvkems.formulas;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class LnLogic {
+	
+	private int n;
+	private List<Float> values; 
+
+	public LnLogic(int n) {
+		this.n = n;
+		values = new ArrayList<Float>(n).
+	}
+
+	public float getTruthValue(int i) {
+		return 0f;
+	}
+
+}

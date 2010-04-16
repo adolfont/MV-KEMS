@@ -1,0 +1,10 @@
+package mvkems.formulas;
+
+public class LnLogic {
+	
+	private int n;
+
+	public LnLogic(int n) {
+	}
+
+}

@@ -1,0 +1,22 @@
+package mvkems.formulas;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Valuation {
+	
+	private Map<AtomicFormula, Float> valuationMap;
+	
+	public Valuation(){
+		valuationMap = new HashMap<AtomicFormula, Float>();
+	}
+
+	public void setValue(AtomicFormula af, float v) {
+		valuationMap.put(af, Float.valueOf(v));
+	}
+
+	public float getValue(CompositeFormula cf1) {
+		return valuationMap.get(cf1).floatValue();
+	}
+
+}

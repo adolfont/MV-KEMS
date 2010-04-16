@@ -1,0 +1,16 @@
+package mvkems.formulas;
+
+public class AtomicFormula {
+	
+	private float value;
+
+	public void setValue(float i) {
+		value=i;
+		
+	}
+
+	public float getValue() {
+		return value;
+	}
+
+}

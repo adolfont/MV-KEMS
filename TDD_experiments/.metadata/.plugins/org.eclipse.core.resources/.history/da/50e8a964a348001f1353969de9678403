@@ -1,0 +1,9 @@
+package mvkems.formulas;
+
+public class LnLogic {
+
+	public LnLogic(int n) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

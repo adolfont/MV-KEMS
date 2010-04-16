@@ -1,0 +1,10 @@
+package mvkems.formulas;
+
+public class AtomicFormula {
+
+	public void setValue(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

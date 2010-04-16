@@ -1,0 +1,52 @@
+package mvkems.formulas;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class ValuationTests {
+
+	private float delta = 0.00001f;
+
+	private AtomicFormula af1;
+	private CompositeFormula cf1;
+	private Valuation v;
+
+	@Before
+	public void setUp() {
+		af1 = new AtomicFormula(1);
+		v = new Valuation();
+	}
+
+	@Test
+	public void assignValueForAnAtomicFormula() {
+		v.setValue(af1, 0);
+		assertEquals(v.getValue(af1), 0f, delta);
+	}
+
+	@Test
+	public void getNegatedValueOfAnAtomicFormula() {
+		v.setValue(af1, 0);
+		cf1 = new CompositeFormula(L3Logic.connectives.NOT, af1);
+		assertEquals(v.getValue(cf1), 1f, delta);
+
+		v.setValue(af1, 1f / 2);
+		cf1 = new CompositeFormula(L3Logic.connectives.NOT, af1);
+		assertEquals(v.getValue(cf1), 1f / 2, delta);
+
+		v.setValue(af1, 1.0f);
+		cf1 = new CompositeFormula(L3Logic.connectives.NOT, af1);
+		assertEquals(v.getValue(cf1), 0f, delta);
+	}
+
+	
+	@Test
+	public void getDoubleNegatedValueOfAtomicFormula() {
+		v.setValue(af1, 0);
+		cf1 = new CompositeFormula(L3Logic.connectives.NOT, af1);
+		cf1 = new CompositeFormula(L3Logic.connectives.NOT, cf1);
+		assertEquals(v.getValue(cf1), 1f, delta);
+	}
+
+}

@@ -1,0 +1,25 @@
+package mvkems.formulas;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class LnLogic {
+	
+	public static enum connectives {NOT, IMPLIES}
+	
+	private int n;
+	private List<Float> values; 
+
+	public LnLogic(int n) {
+		this.n = n;
+		values = new ArrayList<Float>(n);
+		for (int i=0; i<n; i++){
+			values.add(i, i*1f/n);
+		}
+	}
+
+	public float getTruthValue(int i) {
+		return values.get(i);
+	}
+
+}

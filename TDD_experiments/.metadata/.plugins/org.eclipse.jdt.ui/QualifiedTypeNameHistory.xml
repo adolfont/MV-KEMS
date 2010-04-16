@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="mvkems.formulas.L3Logic"/>
+<fullyQualifiedTypeName name="org.junit.Assert"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="mvkems.formulas.LnLogic.connectives"/>
+<fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="mvkems.formulas.LnLogic"/>
+<fullyQualifiedTypeName name="mvkems.formulas.AtomicFormula"/>
+<fullyQualifiedTypeName name="mvkems.formulas.UnassignedValueException"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+</qualifiedTypeNameHistroy>

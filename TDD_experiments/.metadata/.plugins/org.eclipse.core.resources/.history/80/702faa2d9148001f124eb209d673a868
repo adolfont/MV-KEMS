@@ -1,0 +1,12 @@
+
+- some tests for L3 (! and & only)
+ - test negation
+   - of an atomic formula
+   - of a negation^n of an tomic formula
+ - test conjuntion
+
+
+
+
+Future:
+- use KEMS parser 

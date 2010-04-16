@@ -1,0 +1,23 @@
+
+ValuationTests
+- some tests for L3 (! and & only)
+ - test negation ****
+   - of an atomic formula ****
+   - of a double negation of an atomic formula ****
+   
+   
+    
+   - of a negation^n of an atomic formula
+ - test implication
+ 
+ 
+LnLogicTests
+- create a Ln logic object with its truth-values 
+
+
+
+
+
+Future:
+- Define a class/interface for connectives???
+- use KEMS parser 

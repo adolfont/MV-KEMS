@@ -1,0 +1,54 @@
+package mvkems.formulas;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class ValuationTests {
+
+	private float delta = 0.00001f;
+
+	private AtomicFormula af1;
+	private CompositeFormula cf1;
+	private Valuation v;
+	private LnLogic ln;
+
+	@Before
+	public void setUp() {
+		af1 = new AtomicFormula(1);
+		v = new Valuation();
+		ln = new LnLogic(3);
+	}
+
+	@Test
+	public void assignValueForAnAtomicFormula() {
+		v.setValue(af1, ln.getTruthValue(0));
+		assertEquals(v.getValue(af1), L3Logic.VALUES[0], delta);
+	}
+
+	@Test
+	public void getNegatedValueOfAnAtomicFormula() {
+		v.setValue(af1, L3Logic.VALUES[0]);
+		cf1 = new CompositeFormula(L3Logic.connectives.NOT, af1);
+		assertEquals(v.getValue(cf1), L3Logic.VALUES[2], delta);
+
+		v.setValue(af1, L3Logic.VALUES[1]);
+		cf1 = new CompositeFormula(L3Logic.connectives.NOT, af1);
+		assertEquals(v.getValue(cf1), L3Logic.VALUES[1], delta);
+
+		v.setValue(af1, L3Logic.VALUES[2]);
+		cf1 = new CompositeFormula(L3Logic.connectives.NOT, af1);
+		assertEquals(v.getValue(cf1), L3Logic.VALUES[0], delta);
+	}
+
+	
+	@Test
+	public void getDoubleNegatedValueOfAtomicFormula() {
+		v.setValue(af1, L3Logic.VALUES[0]);
+		cf1 = new CompositeFormula(L3Logic.connectives.NOT, af1);
+		cf1 = new CompositeFormula(L3Logic.connectives.NOT, cf1);
+		assertEquals(v.getValue(cf1), L3Logic.VALUES[0], delta);
+	}
+
+}

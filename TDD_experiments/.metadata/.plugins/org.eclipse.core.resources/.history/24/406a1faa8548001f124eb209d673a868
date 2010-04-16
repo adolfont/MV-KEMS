@@ -1,0 +1,12 @@
+package mvkems.formulas;
+
+public class AtomicFormula {
+	
+	private float value;
+	private int id;
+
+	public AtomicFormula(int id) {
+		this.id=id;
+	}
+
+}

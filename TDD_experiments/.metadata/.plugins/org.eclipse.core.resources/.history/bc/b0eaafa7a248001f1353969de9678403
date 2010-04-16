@@ -1,0 +1,197 @@
+= Version 3 =
+public class ValuationTests {
+
+	private float delta = 0.00001f;
+
+	private AtomicFormula af1;
+	private CompositeFormula cf1;
+	private Valuation v;
+	
+	@Before
+	public void setUp() {
+		af1 = new AtomicFormula(1);
+		v = new Valuation();
+	}
+
+	@Test
+	public void assignValueForAnAtomicFormula() {
+		v.setValue(af1, 0);
+		assertEquals(v.getValue(af1), 0f, delta);
+	}
+
+	@Test
+	public void getNegatedValueOfAnAtomicFormula() {
+		v.setValue(af1,0);
+		cf1 = new CompositeFormula(L3Logic.connectives.NOT, af1);
+		assertEquals(v.getValue(cf1), 1f, delta);
+
+		v.setValue(af1,1f/2);
+		cf1 = new CompositeFormula(L3Logic.connectives.NOT, af1);
+		assertEquals(v.getValue(cf1),1f/2 , delta);
+
+		
+		v.setValue(af1,1.0f);
+		cf1 = new CompositeFormula(L3Logic.connectives.NOT, af1);
+		assertEquals(v.getValue(cf1), 0f, delta);
+
+	}
+
+}
+
+
+public class Valuation {
+
+	private Map<Formula, Float> valuationMap;
+
+	public Valuation() {
+		valuationMap = new HashMap<Formula, Float>();
+	}
+
+	public void setValue(Formula f, float v) {
+		valuationMap.put(f, Float.valueOf(v));
+	}
+
+	public float getValue(Formula f) {
+		if (valuationMap.get(f) != null)
+			return valuationMap.get(f).floatValue();
+		else {
+			if (f instanceof CompositeFormula)
+				return getValuationForCompositeFormula(f);
+			else
+				throw new RuntimeException("UNDEFINED");
+		}
+	}
+
+	private float getValuationForCompositeFormula(Formula f) {
+		CompositeFormula cf = (CompositeFormula) f;
+
+		if (cf.getConnective() == L3Logic.connectives.NOT) {
+			return 1f - valuationMap.get(cf.getFormula());
+		} else
+			throw new RuntimeException("UNDEFINED");
+	}
+
+}
+
+
+public class AtomicFormula implements Formula {
+	
+	private int id;
+
+	public AtomicFormula(int id) {
+		this.id=id;
+	}
+
+}
+
+public class CompositeFormula implements Formula {
+	
+	private connectives conn;
+	private Formula f;
+
+	public CompositeFormula(connectives conn, Formula f) {
+		this.conn = conn;
+		this.f = f;
+	}
+
+	public connectives getConnective() {
+		return conn;
+	}
+
+	public Formula getFormula() {
+		return f;
+	}
+
+
+}
+
+
+public interface Formula {
+
+}
+
+
+public class L3Logic {
+	
+	public enum connectives {NOT, IMPLIES};
+	
+
+}
+
+= Version 2 =
+
+public class ValuationTests {
+	
+	private float delta = 0.00001f; 
+	
+	@Test public void assignValuesForFormulas() {
+		
+		AtomicFormula af = new AtomicFormula(1);
+		Valuation v = new Valuation();
+		v.setValue(af,0);
+		
+		assertEquals(v.getValue(af),0f, delta);
+
+	}
+
+}
+
+public class AtomicFormula {
+	
+	private int id;
+
+	public AtomicFormula(int id) {
+		this.id=id;
+	}
+
+}
+
+public class Valuation {
+	
+	private Map<AtomicFormula, Float> valuationMap;
+	
+	public Valuation(){
+		valuationMap = new HashMap<AtomicFormula, Float>();
+	}
+
+	public void setValue(AtomicFormula af, float v) {
+		valuationMap.put(af, Float.valueOf(v));
+	}
+
+	public float getValue(AtomicFormula af) {
+		return valuationMap.get(af).floatValue();
+	}
+
+}
+
+= Version 1 =
+
+public class ValuationTests {
+	
+	private float delta = 0.00001f; 
+	
+	@Test public void assignValuesForFormulas() {
+		
+		AtomicFormula af = new AtomicFormula();
+		af.setValue(0);
+		
+		assertEquals(af.getValue(),0f, delta);
+
+	}
+
+}
+
+public class AtomicFormula {
+	
+	private float value;
+
+	public void setValue(float i) {
+		value=i;
+		
+	}
+
+	public float getValue() {
+		return value;
+	}
+
+}

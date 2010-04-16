@@ -1,0 +1,21 @@
+package mvkems.formulas;
+
+public class AtomicFormula {
+	
+	private float value;
+	private int id;
+
+	public AtomicFormula(int id) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void setValue(float i) {
+		value=i;
+		
+	}
+
+	public float getValue() {
+		return value;
+	}
+
+}

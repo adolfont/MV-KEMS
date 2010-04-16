@@ -1,0 +1,21 @@
+package mvkems.formulas;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class LnLogicTests {
+
+	private float delta = 0.00001f;
+
+	@Test
+	public void create_a_LnLogic_and_verifyItsValues() {
+
+		LnLogic l3 = new LnLogic(3);
+
+		for (int i = 0; i < 3; i++) {
+			assertEquals(l3.getTruthValue(i), i * 1f / 3, delta);
+		}
+
+	}
+
+}

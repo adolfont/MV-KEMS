@@ -1,0 +1,22 @@
+package mvkems.formulas;
+
+import mvkems.formulas.L3Logic.connectives;
+
+
+public class CompositeFormula implements Formula {
+	
+	private connectives conn;
+	private AtomicFormula af;
+
+	public CompositeFormula(connectives conn, AtomicFormula af) {
+		this.conn = conn;
+		this.af = af;
+	}
+
+	public connectives getConnective() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

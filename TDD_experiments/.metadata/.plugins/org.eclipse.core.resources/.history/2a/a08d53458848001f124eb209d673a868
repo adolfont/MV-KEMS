@@ -1,0 +1,13 @@
+package mvkems.formulas;
+
+import mvkems.formulas.L3Logic.connectives;
+
+
+public class CompositeFormula {
+
+	public CompositeFormula(connectives conn, AtomicFormula af) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+}

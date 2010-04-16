@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SaveAsDialogSettings">
+		<item value="613" key="DIALOG_WIDTH"/>
+		<item value="30" key="DIALOG_Y_ORIGIN"/>
+		<item value="594" key="DIALOG_HEIGHT"/>
+		<item value="417" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="CleanDialogSettings">
+		<item value="569" key="DIALOG_WIDTH"/>
+		<item value="197" key="DIALOG_Y_ORIGIN"/>
+		<item value="382" key="DIALOG_HEIGHT"/>
+		<item value="439" key="DIALOG_X_ORIGIN"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+	</section>
+</section>

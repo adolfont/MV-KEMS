@@ -1,0 +1,16 @@
+package mvkems.formulas;
+
+public class LnLogic {
+	
+	private int n;
+	private List<Float> values; 
+
+	public LnLogic(int n) {
+		this.n = n;
+	}
+
+	public float getTruthValue(int i) {
+		return 0f;
+	}
+
+}
